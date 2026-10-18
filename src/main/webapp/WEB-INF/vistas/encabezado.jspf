@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENA CIPA - <c:out value="${titulo}"/></title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilo.css">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/logo_sena.png">
+</head>
+<body>
+<header class="barra">
+    <a class="marca" href="${pageContext.request.contextPath}/inicio">
+        <img src="${pageContext.request.contextPath}/img/logo_sena_blanco.png" alt="SENA">
+        <span>Sistema Academico CIPA</span>
+    </a>
+    <c:if test="${not empty sessionScope.usuario}">
+        <div class="cuenta">
+            <span><c:out value="${sessionScope.usuario.nombreCompleto}"/> &middot; <c:out value="${sessionScope.usuario.rol}"/></span>
+            <a href="${pageContext.request.contextPath}/salir">Cerrar sesion</a>
+        </div>
+    </c:if>
+</header>
+<main class="contenido">
+<c:if test="${not empty sessionScope.aviso}">
+    <div class="aviso ${sessionScope.avisoOk ? 'ok' : 'mal'}"><c:out value="${sessionScope.aviso}"/></div>
+    <c:remove var="aviso" scope="session"/>
+    <c:remove var="avisoOk" scope="session"/>
+</c:if>
+<c:if test="${not empty error}">
+    <div class="aviso mal"><c:out value="${error}"/></div>
+</c:if>

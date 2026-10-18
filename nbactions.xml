@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-correr web</actionName>
+            <displayName>correr web</displayName>
+            <goals>
+                <goal>jetty:run</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-correr web 2</actionName>
+            <displayName>correr web 2</displayName>
+            <goals>
+                <goal>jetty:run</goal>
+                <goal>-Djetty.http.port=8081</goal>
+            </goals>
+        </action>
+    </actions>

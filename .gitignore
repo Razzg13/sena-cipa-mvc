@@ -1,0 +1,17 @@
+# build de Maven
+target/
+
+# respaldos y archivos de descarte (no hace falta subirlos al repo)
+_para_borrar/
+respaldo/
+*.tgz
+*.zip
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# sistema
+Thumbs.db
+.DS_Store
